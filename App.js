@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import LoginScreen from './templates/LoginScreen';
+import firabase from './templates/utils/firebase';
+import "firebase/auth";
 
 export default function App() {
+
+  firabase.auth().onAuthStateChange(user => {
+    console.log(user);
+  })
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <LoginScreen></LoginScreen>
       <StatusBar style="auto" />
     </View>
   );
