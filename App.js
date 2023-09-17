@@ -6,9 +6,6 @@ import "firebase/auth";
 
 export default function App() {
 
-  firabase.auth().onAuthStateChange(user => {
-    console.log(user);
-  })
 
   return (
     <View style={styles.container}>
