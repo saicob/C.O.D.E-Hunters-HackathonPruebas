@@ -17,7 +17,7 @@ export default function Registro(props) {
     
     const [state, setState] = useState({
         Id: '',
-        Rol: '1',
+        Rol: '9',
         email: '',
         password: '',
     })
@@ -27,6 +27,7 @@ export default function Registro(props) {
         { key: 'form1', title: 'Paso 1' },
         { key: 'form2', title: 'Paso 2' },
     ]);
+    
     const inicio = async () => {
         try {
             props.navigation.navigate('InicioSesion')
@@ -36,16 +37,6 @@ export default function Registro(props) {
         }
     }
     
-    const createAcount = async () => {
-        try {
-            const userCredential = await createUserWithEmailAndPassword(auth, state.email, state.password)
-            console.log(userCredential.user)
-        }
-        catch(error){
-            console.error(error)
-        }
-    }
-
     const renderScene = ({ route }) => {
         switch (route.key) {
             case 'form1':
