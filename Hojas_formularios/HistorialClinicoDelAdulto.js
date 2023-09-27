@@ -8,6 +8,7 @@ import Pag4 from './pagina4';
 import Pag5 from './pagina5';
 import Pag1 from './pagina1';
 import Pag2 from './pagina2';
+import Pag3 from './pagina3';
 
 const db = getFirestore(appfirebase)
 
@@ -17,13 +18,24 @@ export default function HistorialClinico(props) {
         switch (route.key) {
             case 'form1':
                 return (
-                    <Pag1/>
+                    <ScrollView>
+
+                        <Pag1/>
+                    </ScrollView>
                     );
             case 'form2':
-                return <Pag2/>
+                return (
+                   <ScrollView>
+                        
+                       <Pag2 />
+                   </ScrollView> 
+                )
             case 'form3':
                 return (
-                    null
+                   <ScrollView>
+                        
+                       <Pag3/> 
+                   </ScrollView> 
                 );
             case 'form4':
                 return (
